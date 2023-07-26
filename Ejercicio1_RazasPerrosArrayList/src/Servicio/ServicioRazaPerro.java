@@ -2,6 +2,7 @@ package Servicio;
 
 import Entidad.RazaPerro;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 public class ServicioRazaPerro {
@@ -34,12 +35,13 @@ public class ServicioRazaPerro {
      */
     public int agregarRaza(RazaPerro raza) {
         razasPerros.add(raza);
-
         return razasPerros.lastIndexOf(raza);
     }
     
     /**
      * Eliminar una raza de perro
+     * @param raza, nombre de la raza que se desea quitar
+     * @return true, si la raza fue eliminada
      */
     public Boolean quitarRaza(String raza){
         Iterator<RazaPerro> it = razasPerros.iterator();
@@ -51,5 +53,17 @@ public class ServicioRazaPerro {
         }
         return false;
     }
-
+    
+    /**
+     * Metodos de ordenamiento
+     */
+    public static Comparator<RazaPerro> compararPorNombreRazaAsc = (RazaPerro t, RazaPerro t1) -> t.getNombre().compareTo(t1.getNombre());
+    public static Comparator<RazaPerro> compararPorNombreRazaDesc = (RazaPerro r, RazaPerro r1) -> r1.getNombre().compareTo(r.getNombre());
+    
+//    public static Comparator<RazaPerro> compararPorNombreRazaAsc = new Comparator<RazaPerro>(){
+//        @Override
+//        public int compare(RazaPerro t, RazaPerro t1) {
+//            return t.getNombre().compareTo(t1.getNombre());
+//        }        
+//    };
 }
