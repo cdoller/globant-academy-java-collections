@@ -20,30 +20,29 @@ public class ServicioAlumno {
         alumnos.add(nuevoAlumno);
     }
 
-    public Double calcularNotaFinal(String nombre) {
+    public Double calcularNotaFinal(Alumno alumno) {
         Double sumaNotas = 0.0;
-        Alumno alumno = buscarAlumno(nombre);
-        
         if (alumno == null) 
             return sumaNotas;
 
         ArrayList<Integer> notas = alumno.getNotas();
+        if(notas.isEmpty())
+            return sumaNotas;
+        
         for (Integer nota : notas) {
             sumaNotas += nota;
         }
         return sumaNotas / notas.size();
     }
 
-    private Alumno buscarAlumno(String nombre) {
+    public Alumno buscarAlumno(String nombre) {
         Iterator<Alumno> it = alumnos.iterator();
-
         while (it.hasNext()) {
             Alumno alumno = it.next();
             if (alumno.getNombre().equals(nombre)) {
                 return alumno;
             }
         }
-
         return null;
     }
 

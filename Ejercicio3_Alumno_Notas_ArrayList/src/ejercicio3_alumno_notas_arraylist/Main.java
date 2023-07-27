@@ -11,9 +11,9 @@ public class Main {
         servAlumno.crearAlumno("Carlos", arrayNotas1);
         servAlumno.crearAlumno("Franco", arrayNotas2);
 
-        System.out.println("Carlos, nota final: " + servAlumno.calcularNotaFinal("Carlos"));
-        System.out.println("Franco, nota final: " + servAlumno.calcularNotaFinal("Franco"));
-        System.out.println("Pedro, nota final: " + servAlumno.calcularNotaFinal("Pedro"));
+        System.out.println("Carlos, nota final: " + servAlumno.calcularNotaFinal(servAlumno.buscarAlumno("Carlos")));
+        System.out.println("Franco, nota final: " + servAlumno.calcularNotaFinal(servAlumno.buscarAlumno("Franco")));
+        System.out.println("Pedro, nota final: " + servAlumno.calcularNotaFinal(servAlumno.buscarAlumno("Pedro")));
 
         System.out.println(servAlumno.getAlumnos().toString());
     }
