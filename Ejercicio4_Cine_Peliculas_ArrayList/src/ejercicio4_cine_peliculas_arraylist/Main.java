@@ -37,7 +37,6 @@ public class Main {
                     String director = input.next();
                     System.out.print("Ingrese duracion en minutos: ");
                     Integer duracion = input.nextInt();
-                    servPelicula.crearPelicula(titulo, director, duracion);
                     if(servPelicula.crearPelicula(titulo, director, duracion))
                         System.out.println("Pelicula agregada exitosamente");
                     break;
