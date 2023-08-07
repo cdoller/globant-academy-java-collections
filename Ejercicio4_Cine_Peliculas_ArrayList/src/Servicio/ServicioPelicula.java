@@ -21,10 +21,15 @@ public class ServicioPelicula{
         return peliculas;
     }
     
+    /**
+     * Filtra las peliculas segun su duracion
+     * @param duracionMinutos duracion minima de la pelicula
+     * @return las peliculas filtradas segun duracionMinutos
+     */
     public ArrayList<Pelicula> filtrarPeliculasDuracionMayorA(Integer duracionMinutos){
         ArrayList<Pelicula> peliculasFiltradas = new ArrayList<Pelicula>();
         for (Pelicula pelicula : peliculas) {
-            if(pelicula.getDuracionMinutos() > duracionMinutos)
+            if(pelicula.getDuracionMinutos() >= duracionMinutos)
                 peliculasFiltradas.add(pelicula);
         }
         return peliculasFiltradas;
